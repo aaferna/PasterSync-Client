@@ -1,0 +1,23 @@
+{
+  "name": "pastersync-client",
+  "version": "0.1.0",
+  "description": "Cliente para la Sincronizacion",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gusgeek/PasterSync-Client.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gusgeek/PasterSync-Client/issues"
+  },
+  "homepage": "https://github.com/gusgeek/PasterSync-Client#readme",
+  "dependencies": {
+    "chokidar": "^3.5.2",
+    "fs": "0.0.1-security"
+  }
+}
