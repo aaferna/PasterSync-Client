@@ -1,7 +1,7 @@
 var fs = require("fs"); 
 const request = require('request');
 
-exports.validate = (file, directorio) => {
+exports.validate = (file, directorio, server) => {
 
     let sizeInit = 0
     var myVar = setInterval(() =>{
@@ -19,7 +19,7 @@ exports.validate = (file, directorio) => {
   
           // Apago el Timer y hago Post
           timerClose()
-         this.uploads(file)
+         this.uploads(file, server)
 
   
         } else { sizeInit = stats.mtimeMs }
@@ -40,11 +40,11 @@ exports.validate = (file, directorio) => {
 }
 
 
-exports.uploads = (file) => {
+exports.uploads = (file, server) => {
 
     console.log("llego ", file)
 
-    var r = request.post('http://localhost:3000/upload', function optionalCallback (err, httpResponse, body) {
+    var r = request.post(server, function optionalCallback (err, httpResponse, body) {
         if (err) {
           return console.error('upload failed:', err);
         }

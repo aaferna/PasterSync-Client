@@ -1,3 +1,4 @@
 {
-    "directorio": "E:\\Programacion\\Desarrollos\\PasterSync-Client\\my" 
+    "directorio": "E:\\Programacion\\Desarrollos\\PasterSync-Client\\my",
+    "server": "http://localhost:3000/upload"
 }
