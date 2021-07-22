@@ -5,6 +5,8 @@ var controller = require("./modules/controller");
 
 let directorio = c.directorio
 let server = c.server
+let logDir = c.log
+
 const watcher = chokidar.watch(directorio, {
   ignored: /(^|[\/\\])\../, // ignore dotfiles
   persistent: true,
@@ -15,4 +17,4 @@ const watcher = chokidar.watch(directorio, {
 
 watcher
 .on('ready', () =>  console.log('Initial scan complete. Ready for changes'))
-.on('add', (path) => { controller.validate(path, directorio, server) })
+.on('add', (path) => { controller.validate(path, directorio, server, logDir) })

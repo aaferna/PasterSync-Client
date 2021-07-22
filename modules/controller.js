@@ -1,7 +1,8 @@
 var fs = require("fs"); 
 const request = require('request');
+const l = require("./logger")
 
-exports.validate = (file, directorio, server) => {
+exports.validate = (file, directorio, server, logDir) => {
 
     let sizeInit = 0
     var myVar = setInterval(() =>{
@@ -14,12 +15,11 @@ exports.validate = (file, directorio, server) => {
         else if (sizeInit === stats.mtimeMs){
 
             let preform = file.split(directorio)
-  
-          console.log(preform, "Archivo ", file," listo para subir", sizeInit, stats.mtimeMs)
+            l.logger(logDir, "CLIENTE", "Archivo " + file + " listo para subir")
   
           // Apago el Timer y hago Post
           timerClose()
-         this.uploads(file, server)
+         this.uploads(file, server, logDir)
 
   
         } else { sizeInit = stats.mtimeMs }
@@ -27,7 +27,7 @@ exports.validate = (file, directorio, server) => {
       } catch(err) {
   
         timerClose()
-        console.log("Existe un inconveniente con la carga de ", file, err)
+        l.logger(logDir, "CLIENTE", "Existe un inconveniente con la carga de " + file + err)
   
       }
       
@@ -40,15 +40,13 @@ exports.validate = (file, directorio, server) => {
 }
 
 
-exports.uploads = (file, server) => {
-
-    console.log("llego ", file)
+exports.uploads = (file, server, logDir) => {
 
     var r = request.post(server, function optionalCallback (err, httpResponse, body) {
         if (err) {
-          return console.error('upload failed:', err);
+          l.logger(logDir, "CLIENTE",'upload failed:' + err)
         }
-        console.log('Upload successful!  Server responded with:', body);
+        l.logger(logDir, "CLIENTE",'Upload successful!  Server responded with:' + body)
       })
       var form = r.form()
       form.append('data', fs.createReadStream(file))
