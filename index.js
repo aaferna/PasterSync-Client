@@ -1,6 +1,6 @@
 const chokidar = require('chokidar');
 
-var c = require("./config.json"); 
+var c = require(__dirname,"/config.json"); 
 var controller = require("./modules/controller"); 
 
 let directorio = c.directorio
