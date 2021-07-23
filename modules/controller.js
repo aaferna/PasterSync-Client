@@ -44,9 +44,10 @@ exports.uploads = (file, server, logDir) => {
 
     var r = request.post(server, function optionalCallback (err, httpResponse, body) {
         if (err) {
-          l.logger(logDir, "CLIENTE",'upload failed:' + err)
+          l.logger(logDir, "CLIENTE",'Upload Fallo:' + err)
+        } else {
+          l.logger(logDir, "CLIENTE",'Upload Correcto:' + body)
         }
-        l.logger(logDir, "CLIENTE",'Upload successful!  Server responded with:' + body)
       })
       var form = r.form()
       form.append('data', fs.createReadStream(file))

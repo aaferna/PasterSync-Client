@@ -1,6 +1,7 @@
 const chokidar = require('chokidar');
-
-var c = require(__dirname,"/config.json"); 
+const path = require('path');
+const deployPath = path.dirname(process.execPath);
+const c = require(path.join(deployPath, 'config.json'));
 var controller = require("./modules/controller"); 
 
 let directorio = c.directorio
