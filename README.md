@@ -3,7 +3,7 @@
   <br>
   PasterSync Herramienta para la subida direccional de contenidos 
   <br>
-  Cliente para PasterSync
+  Cliente para <a href="https://github.com/gusgeek/PasterSync-Server">PasterSync Server</a>
 </p>
 
 
