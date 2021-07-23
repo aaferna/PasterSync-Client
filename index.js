@@ -2,7 +2,9 @@ const chokidar = require('chokidar');
 const path = require('path');
 const deployPath = path.dirname(process.execPath);
 const c = require(path.join(deployPath, 'config.json'));
-var controller = require("./modules/controller"); 
+// const c = require('./config.json');
+
+const controller = require("./modules/controller"); 
 
 let directorio = c.directorio
 let server = c.server
@@ -17,5 +19,5 @@ const watcher = chokidar.watch(directorio, {
 });
 
 watcher
-.on('ready', () =>  console.log('Initial scan complete. Ready for changes'))
+.on('ready', () =>  console.log('Servicio inicializado, y mirando el directorio ' + directorio))
 .on('add', (path) => { controller.validate(path, directorio, server, logDir) })

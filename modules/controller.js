@@ -19,8 +19,8 @@ exports.validate = (file, directorio, server, logDir) => {
   
           // Apago el Timer y hago Post
           timerClose()
-         this.uploads(file, server, logDir)
-
+          this.uploads(file, server, logDir)
+        
   
         } else { sizeInit = stats.mtimeMs }
   
@@ -44,9 +44,16 @@ exports.uploads = (file, server, logDir) => {
 
     var r = request.post(server, function optionalCallback (err, httpResponse, body) {
         if (err) {
-          l.logger(logDir, "CLIENTE",'Upload Fallo:' + err)
+          l.logger(logDir, "CLIENTE",'Upload Fallo' + err)
         } else {
-          l.logger(logDir, "CLIENTE",'Upload Correcto:' + body)
+          l.logger(logDir, "CLIENTE",'Upload Correcto:' + body) 
+          fs.unlink(file, function (err) {
+            if (err) {
+              l.logger(logDir, "CLIENTE", "Error al borrar el archivo"+ err)
+            } else {
+              l.logger(logDir, "CLIENTE", "Archivo " + file + " Eliminado del Directorio de Subida")
+            };
+          });
         }
       })
       var form = r.form()
