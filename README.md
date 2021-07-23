@@ -1,5 +1,7 @@
 <p align="center">
   <img width="500" src="https://github.com/gusgeek/PasterSync-Client/blob/main/logo.svg">
+   <br>
+  PasterSync Herramienta para la subida direccional
   <br>
   Cliente para PasterSync
 </p>
