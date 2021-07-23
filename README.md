@@ -21,4 +21,9 @@
 - Esta pensado para que este lo realize mirando un directorio especifico. 
 - El programa esta preparado para esperar aquellas cargas que sean pesadas
 
+Para compilar en Windows se recomienda:
+- Usar la libreria PKG
+- Establecer el archivo config.json al lado del EXE.
+- Usar directorios ABSOLUTOS no RELATIVOS eje. c:\\dir\\
+
 
