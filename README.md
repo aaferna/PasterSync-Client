@@ -27,3 +27,13 @@ Para compilar en Windows se recomienda:
 - Usar directorios ABSOLUTOS no RELATIVOS eje. c:\\dir\\
 
 
+<p align="center">
+  <br>
+  <bR>
+    <img src="https://img.shields.io/github/downloads/gusgeek/PasterSync-Client/total">  
+    <img src="https://img.shields.io/github/v/release/gusgeek/PasterSync-Client">  
+    <img src="https://img.shields.io/github/release-date/gusgeek/PasterSync-Client">  
+    <img src="https://img.shields.io/github/languages/code-size/gusgeek/PasterSync-Client">
+  <br><br>
+  <strong>:pencil2: con :heart:</strong>
+</p>
